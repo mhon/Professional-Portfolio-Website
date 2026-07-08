@@ -48,7 +48,7 @@ export function Footer() {
                 <span className="sr-only">LinkedIn</span>
               </a>
               <a 
-                href="mailto:hello@raymondbastasa.dev" 
+                href="mailto:mhonbastasa@yahoo.com.ph" 
                 className="h-10 w-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-muted-foreground hover:text-white hover:border-primary/50 hover:bg-primary/10 transition-all duration-300"
               >
                 <Mail size={20} />

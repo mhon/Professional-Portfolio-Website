@@ -30,7 +30,7 @@ export function Contact() {
 
     const subject = `Portfolio inquiry from ${formData.name}`;
     const body = `${formData.message}\n\n—\n${formData.name}\n${formData.email}`;
-    const mailtoUrl = `mailto:hello@raymondbastasa.dev?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const mailtoUrl = `mailto:mhonbastasa@yahoo.com.ph?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
     // Opens the visitor's own email client with the message pre-filled,
     // since this static site has no backend to deliver the message itself.
@@ -75,13 +75,13 @@ export function Contact() {
             </p>
             
             <div className="space-y-6">
-              <a href="mailto:hello@raymondbastasa.dev" className="flex items-center gap-4 text-muted-foreground hover:text-white transition-colors group">
+              <a href="mailto:mhonbastasa@yahoo.com.ph" className="flex items-center gap-4 text-muted-foreground hover:text-white transition-colors group">
                 <div className="h-12 w-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/30 group-hover:text-primary transition-all">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-sm font-mono text-white/50 mb-1">Email</span>
-                  <span className="font-medium text-lg">hello@raymondbastasa.dev</span>
+                  <span className="font-medium text-lg">mhonbastasa@yahoo.com.ph</span>
                 </div>
               </a>
               
