@@ -1,0 +1,418 @@
+Act as a Senior Full-Stack Software Engineer, Frontend Architect, Technical Lead, SEO Specialist, Web Performance Engineer, and Accessibility Expert.
+
+Your objective is to build a premium-quality personal portfolio website that represents Raymond Bastasa as an experienced Full Stack Software Engineer with expertise in AI Integration, modern web technologies, and enterprise software development.
+
+The final output must be production-ready, fully responsive, optimized for SEO, accessible, high-performance, and ready for deployment on Vercel.
+
+This is NOT a landing page template.
+
+It must be a polished, modern, premium portfolio comparable to the quality of top software engineers' personal websites.
+
+====================================================
+PROJECT OBJECTIVE
+====================================================
+
+Create a professional developer portfolio that will:
+
+• Showcase my technical expertise
+• Present my professional experience
+• Highlight my best software projects
+• Demonstrate AI integration capabilities
+• Attract recruiters worldwide
+• Attract freelance clients
+• Serve as my personal brand website
+
+The overall experience should immediately communicate professionalism, technical excellence, innovation, and attention to detail.
+
+====================================================
+DESIGN STYLE
+====================================================
+
+Use the following websites only as inspiration for design quality, layout, animations, and user experience.
+
+DO NOT COPY any code, content, branding, illustrations, colors, or layouts exactly.
+
+Reference Inspiration:
+
+https://raypanganiban8.vercel.app
+
+https://reyca-dev.vercel.app
+
+The final design must have its own unique identity.
+
+The website should feel:
+
+• Modern
+• Minimal
+• Elegant
+• Premium
+• Interactive
+• Clean
+• Professional
+• High-end
+• Developer-focused
+
+====================================================
+TECHNOLOGY STACK
+====================================================
+
+Build using:
+
+• Next.js (latest stable version)
+• TypeScript
+• Tailwind CSS
+• React
+• Framer Motion
+• Lucide Icons
+• React Icons where appropriate
+
+Use reusable components.
+
+Use proper folder organization.
+
+Follow modern React best practices.
+
+====================================================
+PERFORMANCE
+====================================================
+
+Optimize for:
+
+• Lighthouse Score 95+
+• Fast loading
+• Lazy loading
+• Image optimization
+• Code splitting
+• Smooth animations
+• SEO optimization
+• Accessibility (WCAG)
+• Mobile-first design
+
+====================================================
+COLOR THEME
+====================================================
+
+Create a premium dark theme.
+
+Accent colors should feel modern and professional.
+
+Avoid excessive gradients.
+
+Use subtle glowing effects.
+
+Use glassmorphism only where appropriate.
+
+Typography should be elegant and highly readable.
+
+====================================================
+NAVIGATION
+====================================================
+
+Sticky navigation.
+
+Smooth scrolling.
+
+Active menu highlighting.
+
+Mobile responsive navigation.
+
+Animated transitions.
+
+Menu Items:
+
+Home
+
+About Me
+
+Skills
+
+Portfolio
+
+Contact
+
+====================================================
+HOME / HERO SECTION
+====================================================
+
+Display:
+
+Raymond Bastasa
+
+Headline:
+
+AI-Driven Full Stack Development
+
+Subheadline:
+
+AI Integration
+
+Professional Description:
+
+Crafting intelligent digital ecosystems where human creativity meets artificial intelligence. Building scalable, secure, and high-performance web applications enhanced by intelligent automation.
+
+Add subtle background animations.
+
+Add modern entrance animations.
+
+Include CTA buttons:
+
+• View Portfolio
+
+• Contact Me
+
+====================================================
+ABOUT ME
+====================================================
+
+Create a professional and compelling introduction.
+
+Base it on the following information while improving the wording.
+
+"I am a Full Stack Software Engineer specializing in AI Integration and modern web technologies. My passion is building scalable, intelligent, and user-focused digital products that combine clean architecture with automation.
+
+With extensive experience developing enterprise applications using PHP, C#, ASP.NET, JavaScript, TypeScript, React, Next.js, Python, and SQL technologies, I create software solutions that are secure, maintainable, and built for long-term growth.
+
+My expertise spans frontend development, backend engineering, RESTful APIs, cloud-based architectures, AI-assisted workflows, and modern development practices. I continuously explore emerging technologies to deliver innovative solutions that improve productivity, user experience, and business value."
+
+Make this section visually engaging with animations and a professional layout.
+
+====================================================
+SKILLS
+====================================================
+
+Create an animated technology showcase inspired by modern developer portfolios.
+
+Implement continuously scrolling technology rows similar in concept to the inspiration sites, but with an original implementation and styling.
+
+Categorize technologies into:
+
+Frontend
+
+• HTML5
+• CSS3
+• JavaScript
+• TypeScript
+• React
+• Next.js
+• Angular
+• Tailwind CSS
+• Bootstrap
+• jQuery
+
+Backend
+
+• PHP
+• Laravel
+• C#
+• ASP.NET Core
+• ASP.NET MVC
+• Node.js
+• Express.js
+• Python
+• FastAPI
+• Django
+• REST API
+
+Database
+
+• MySQL
+• Microsoft SQL Server
+• PostgreSQL
+• Supabase
+
+AI & Automation
+
+• OpenAI API
+• Google Gemini API
+• LLM Integration
+• LangChain
+• Retrieval-Augmented Generation (RAG)
+• AI Agents
+• Prompt Engineering
+• Vector Databases
+• AI Workflow Automation
+
+Tools & DevOps
+
+• Git
+• GitHub
+• Vercel
+• Docker
+• Postman
+• Visual Studio
+• Visual Studio Code
+• npm
+• pnpm
+
+Each category should have elegant animations, hover effects, and modern iconography.
+
+====================================================
+PORTFOLIO
+====================================================
+
+Display projects using premium interactive project cards.
+
+Each project card should include:
+
+Project image
+
+Project title
+
+Description
+
+Technology stack
+
+Live Demo button
+
+GitHub button
+
+Featured badge (where applicable)
+
+Projects:
+
+CRM Dashboard
+
+Live Demo:
+http://client-management-suite--mhonbastasa.replit.app/
+
+GitHub:
+https://github.com/mhon/crm-dashboard
+
+Task Management System
+
+GitHub:
+https://github.com/mhon/TaskAi-Pro
+
+AI Math Problem Generator
+
+Live Demo:
+https://ai-response-math-problem-final.vercel.app/
+
+GitHub:
+https://github.com/mhon/AI-Response-Math-Problem-FINAL
+
+====================================================
+CONTACT
+====================================================
+
+Headline:
+
+Let's Build Something Amazing Together
+
+Supporting text:
+
+Whether you're looking to develop a scalable web application, integrate AI into your business, or collaborate on an innovative project, I'd love to hear from you. Let's transform your ideas into impactful digital solutions.
+
+Display:
+
+Email
+
+LinkedIn (https://www.linkedin.com/in/raymond-bastasa-59804a116/)
+
+GitHub (https://github.com/mhon)
+
+Contact Form:
+
+Name
+
+Email Address
+
+Message
+
+Submit Button
+
+Include client-side validation.
+
+Display success and error notifications.
+
+====================================================
+FOOTER
+====================================================
+
+Include:
+
+Raymond Bastasa
+
+Copyright
+
+Current Year
+
+Social Links
+
+Back-to-top button
+
+====================================================
+SEO
+====================================================
+
+Generate:
+
+Meta Title
+
+Meta Description
+
+Open Graph Tags
+
+Twitter Cards
+
+robots.txt
+
+sitemap.xml
+
+Structured Data (JSON-LD)
+
+Favicon
+
+Manifest
+
+====================================================
+ANIMATIONS
+====================================================
+
+Use tasteful animations throughout the website.
+
+Examples:
+
+Fade In
+
+Slide Up
+
+Scale
+
+Hover Glow
+
+Floating Background Elements
+
+Animated Skill Rows
+
+Scroll Reveal
+
+Smooth Page Transitions
+
+Avoid excessive or distracting animations.
+
+====================================================
+CODE QUALITY
+====================================================
+
+Follow clean architecture principles.
+
+Use reusable React components.
+
+Maintain a scalable folder structure.
+
+Write clean, maintainable TypeScript.
+
+Avoid duplicated code.
+
+====================================================
+DEPLOYMENT
+====================================================
+
+The project must be fully compatible with Vercel deployment.
+
+Provide all necessary configuration files.
+
+Ensure there are no build warnings or TypeScript errors.
+
+The final output should be a production-ready portfolio website suitable for showcasing to recruiters, clients, and employers worldwide.
