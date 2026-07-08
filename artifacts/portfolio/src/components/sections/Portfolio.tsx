@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Star } from 'lucide-react';
+import { ExternalLink, Github, Star, ListTodo } from 'lucide-react';
+import crmDashboardImg from '@/assets/projects/crm-dashboard.png';
+import aiMathGeneratorImg from '@/assets/projects/ai-math-generator.png';
 
 const PROJECTS = [
   {
@@ -8,6 +10,7 @@ const PROJECTS = [
     tech: ['React', 'TypeScript', 'Tailwind CSS', 'Recharts', 'React Query'],
     liveUrl: 'http://client-management-suite--mhonbastasa.replit.app/',
     githubUrl: 'https://github.com/mhon/crm-dashboard',
+    image: crmDashboardImg,
     featured: true,
   },
   {
@@ -16,6 +19,7 @@ const PROJECTS = [
     tech: ['Next.js', 'Node.js', 'PostgreSQL', 'OpenAI API', 'Prisma'],
     liveUrl: null,
     githubUrl: 'https://github.com/mhon/TaskAi-Pro',
+    image: null,
     featured: false,
   },
   {
@@ -24,6 +28,7 @@ const PROJECTS = [
     tech: ['React', 'Python', 'FastAPI', 'LangChain', 'Gemini API'],
     liveUrl: 'https://ai-response-math-problem-final.vercel.app/',
     githubUrl: 'https://github.com/mhon/AI-Response-Math-Problem-FINAL',
+    image: aiMathGeneratorImg,
     featured: false,
   }
 ];
@@ -60,6 +65,25 @@ export function Portfolio() {
                 project.featured ? 'lg:col-span-2' : ''
               }`}
             >
+              {/* Project preview image */}
+              <div className="relative h-56 md:h-64 border-b border-white/5 overflow-hidden bg-white/5">
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={`${project.title} preview`}
+                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-white/5 to-transparent">
+                    <ListTodo className="w-10 h-10 text-white/20" />
+                    <span className="text-xs font-mono text-white/30 uppercase tracking-widest">
+                      Preview coming soon
+                    </span>
+                  </div>
+                )}
+              </div>
+
               <div className="p-8 flex-1 flex flex-col">
                 
                 <div className="flex justify-between items-start mb-6">
@@ -114,14 +138,6 @@ export function Portfolio() {
                       {tech}
                     </span>
                   ))}
-                </div>
-              </div>
-              
-              {/* Optional: If we had images, they would go here. We'll use a stylized abstract pattern area instead to maintain the premium feel without generic stock images. */}
-              <div className="h-32 bg-gradient-to-br from-white/5 to-transparent border-t border-white/5 relative overflow-hidden flex items-center justify-center">
-                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent" />
-                <div className="font-mono text-sm text-white/20 tracking-[0.2em] uppercase mix-blend-overlay">
-                  {project.title.replace(/[^a-zA-Z]/g, '').substring(0, 8)}
                 </div>
               </div>
             </motion.div>

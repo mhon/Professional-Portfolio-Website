@@ -125,10 +125,11 @@ export function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-card/95 backdrop-blur-xl border-b border-white/5 overflow-hidden"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.18, ease: 'easeOut' }}
+            className="md:hidden bg-card/95 backdrop-blur-xl border-b border-white/5 relative z-50"
           >
             <nav className="flex flex-col p-4 space-y-2">
               {NAV_LINKS.map((link) => (
@@ -137,10 +138,10 @@ export function Navbar() {
                   href={link.href}
                   onClick={(e) => scrollTo(e, link.href)}
                   className={cn(
-                    'px-4 py-3 rounded-lg text-base font-medium transition-colors',
+                    'px-4 py-3 rounded-lg text-base font-medium transition-colors touch-manipulation',
                     activeSection === link.href.substring(1)
                       ? 'bg-primary/20 text-primary border border-primary/20'
-                      : 'text-muted-foreground hover:bg-white/5'
+                      : 'text-muted-foreground hover:bg-white/5 active:bg-white/10'
                   )}
                 >
                   {link.name}

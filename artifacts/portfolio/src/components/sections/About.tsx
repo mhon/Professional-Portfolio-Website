@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Cpu, Server, Code2, Sparkles } from 'lucide-react';
+import { Server, Code2, Sparkles } from 'lucide-react';
 
 export function About() {
   const cards = [
@@ -79,12 +79,6 @@ export function About() {
                 </p>
               </div>
             ))}
-            
-            {/* Decorative block */}
-            <div className="hidden sm:block glass-panel rounded-2xl p-6 relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <Cpu className="h-8 w-8 text-white/20 absolute -right-2 -bottom-2 transform rotate-12 group-hover:text-primary/20 transition-colors duration-500 w-24 h-24" />
-            </div>
           </motion.div>
 
         </div>

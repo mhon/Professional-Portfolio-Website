@@ -94,9 +94,15 @@ const RADIUS = 180;
 
 function nodePosition(index: number, total: number) {
   const angle = (index / total) * Math.PI * 2 - Math.PI / 2;
+  const x = CENTER + RADIUS * Math.cos(angle);
+  const y = CENTER + RADIUS * Math.sin(angle);
+  // Percentages so HTML-positioned nodes scale with the container instead of
+  // relying on the fixed 480px coordinate space (which broke on narrow screens).
   return {
-    x: CENTER + RADIUS * Math.cos(angle),
-    y: CENTER + RADIUS * Math.sin(angle),
+    x,
+    y,
+    xPct: (x / GRAPH_SIZE) * 100,
+    yPct: (y / GRAPH_SIZE) * 100,
   };
 }
 
@@ -185,14 +191,14 @@ export function Skills() {
 
             {/* Core node */}
             <motion.div
-              className="absolute flex items-center justify-center h-24 w-24 rounded-full glass-panel border-primary/40 text-center"
-              style={{ left: CENTER, top: CENTER, transform: 'translate(-50%, -50%)' }}
+              className="absolute flex items-center justify-center h-16 w-16 sm:h-24 sm:w-24 rounded-full glass-panel border-primary/40 text-center"
+              style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }}
               animate={prefersReducedMotion ? undefined : { y: [0, -6, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
             >
               <div>
-                <div className="text-lg font-display font-bold text-white leading-none">RB</div>
-                <div className="text-[10px] text-primary font-mono mt-1 uppercase tracking-wide">Core</div>
+                <div className="text-sm sm:text-lg font-display font-bold text-white leading-none">RB</div>
+                <div className="hidden sm:block text-[10px] text-primary font-mono mt-1 uppercase tracking-wide">Core</div>
               </div>
             </motion.div>
 
@@ -208,22 +214,22 @@ export function Skills() {
                   aria-pressed={isActive}
                   aria-label={`Show ${category.fullTitle} skills`}
                   aria-controls={panelId}
-                  className="absolute flex flex-col items-center gap-1.5 group focus-visible:outline-none"
-                  style={{ left: pos.x, top: pos.y, transform: 'translate(-50%, -50%)' }}
+                  className="absolute flex flex-col items-center gap-1.5 group focus-visible:outline-none touch-manipulation"
+                  style={{ left: `${pos.xPct}%`, top: `${pos.yPct}%`, transform: 'translate(-50%, -50%)' }}
                   animate={prefersReducedMotion ? undefined : { y: [0, i % 2 === 0 ? -8 : 8, 0] }}
                   transition={{ duration: 5 + i, repeat: Infinity, ease: 'easeInOut' }}
                 >
                   <span
-                    className={`flex items-center justify-center h-16 w-16 rounded-full border transition-all duration-300 group-focus-visible:ring-2 group-focus-visible:ring-primary group-focus-visible:ring-offset-2 group-focus-visible:ring-offset-background ${
+                    className={`flex items-center justify-center h-11 w-11 sm:h-16 sm:w-16 rounded-full border transition-all duration-300 group-focus-visible:ring-2 group-focus-visible:ring-primary group-focus-visible:ring-offset-2 group-focus-visible:ring-offset-background ${
                       isActive
                         ? 'bg-primary/20 border-primary text-primary shadow-[0_0_25px_rgba(33,212,185,0.35)]'
                         : 'bg-white/5 border-white/10 text-muted-foreground group-hover:border-white/30 group-hover:text-white'
                     }`}
                   >
-                    <category.icon className="w-6 h-6" />
+                    <category.icon className="w-4 h-4 sm:w-6 sm:h-6" />
                   </span>
                   <span
-                    className={`text-xs font-medium whitespace-nowrap px-2 py-0.5 rounded-full transition-colors ${
+                    className={`text-[10px] sm:text-xs font-medium whitespace-nowrap px-1.5 sm:px-2 py-0.5 rounded-full transition-colors ${
                       isActive ? 'text-primary' : 'text-muted-foreground group-hover:text-white'
                     }`}
                   >
