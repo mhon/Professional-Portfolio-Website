@@ -35,7 +35,7 @@ const PROJECTS = [
 
 export function Portfolio() {
   return (
-    <section id="portfolio" className="py-24 relative">
+    <section id="portfolio" className="pt-10 pb-24 relative">
       <div className="container mx-auto px-6 md:px-12">
         
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">

@@ -21,7 +21,7 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-24 relative">
+    <section id="about" className="pt-10 pb-24 relative">
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col lg:flex-row gap-16 items-start">
           

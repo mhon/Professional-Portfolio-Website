@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export function Hero() {
   return (
-    <section id="home" className="relative min-h-[100dvh] flex items-center justify-center pt-20 overflow-hidden">
+    <section id="home" className="relative min-h-[100dvh] flex items-start justify-center pt-28 md:pt-32 overflow-hidden">
       
       {/* Abstract geometric shapes in background */}
       <div className="absolute inset-0 pointer-events-none opacity-20">

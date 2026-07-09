@@ -117,7 +117,7 @@ export function Skills() {
   const panelId = 'skills-active-panel';
 
   return (
-    <section id="skills" className="py-24 relative overflow-hidden bg-white/[0.02]">
+    <section id="skills" className="pt-10 pb-24 relative overflow-hidden bg-white/[0.02]">
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 

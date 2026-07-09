@@ -48,7 +48,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
+    <section id="contact" className="pt-10 pb-24 relative overflow-hidden">
       <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
       
       <div className="container mx-auto px-6 md:px-12 relative z-10">
