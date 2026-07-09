@@ -15,7 +15,7 @@ export function Contact() {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       toast({
@@ -28,23 +28,36 @@ export function Contact() {
 
     setIsSubmitting(true);
 
-    const subject = `Portfolio inquiry from ${formData.name}`;
-    const body = `${formData.message}\n\n—\n${formData.name}\n${formData.email}`;
-    const mailtoUrl = `mailto:mhonbastasa@yahoo.com.ph?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    try {
+      const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+      const res = await fetch(`${base}/api/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-    // Opens the visitor's own email client with the message pre-filled,
-    // since this static site has no backend to deliver the message itself.
-    window.location.href = mailtoUrl;
+      const data = await res.json() as { ok: boolean; error?: string };
 
-    setTimeout(() => {
-      setIsSubmitting(false);
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error ?? 'Unknown error');
+      }
+
       setFormData({ name: '', email: '', message: '' });
       toast({
-        title: "Almost there!",
-        description: "Your email app should now be open with the message pre-filled — just hit send.",
+        title: "Message sent!",
+        description: "Thanks for reaching out — I'll get back to you soon.",
         className: "bg-card border-primary text-card-foreground"
       });
-    }, 600);
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : 'Something went wrong.';
+      toast({
+        title: "Failed to send",
+        description: msg,
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -75,7 +88,7 @@ export function Contact() {
             </p>
             
             <div className="space-y-6">
-              <a href="mailto:mhonbastasa@yahoo.com.ph" className="flex items-center gap-4 text-muted-foreground hover:text-white transition-colors group">
+              <a href="mailto:mhonbastasa@yahoo.com.ph" target="_blank" rel="noreferrer" className="flex items-center gap-4 text-muted-foreground hover:text-white transition-colors group">
                 <div className="h-12 w-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/30 group-hover:text-primary transition-all">
                   <Mail className="w-5 h-5" />
                 </div>
