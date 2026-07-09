@@ -1,21 +1,8 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Terminal } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 export function Hero() {
-  const scrollTo = (e: React.MouseEvent<HTMLButtonElement>, href: string) => {
-    e.preventDefault();
-    const target = document.querySelector(href);
-    if (target) {
-      window.scrollTo({
-        top: target.getBoundingClientRect().top + window.scrollY - 80,
-        behavior: 'smooth',
-      });
-    }
-  };
-
   return (
-    <section id="home" className="relative min-h-0 flex items-center justify-center pt-20 overflow-hidden">
+    <section id="home" className="relative min-h-[100dvh] flex items-center justify-center pt-20 overflow-hidden">
       
       {/* Abstract geometric shapes in background */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
@@ -58,37 +45,11 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl font-light leading-relaxed"
+            className="text-lg md:text-xl text-muted-foreground max-w-2xl font-light leading-relaxed"
           >
             Crafting intelligent digital ecosystems where human creativity meets artificial intelligence. 
             Building scalable, secure, and high-performance web applications enhanced by intelligent automation.
           </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
-          >
-            <Button 
-              size="lg" 
-              className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary/90 font-medium tracking-wide shadow-[0_0_20px_rgba(33,212,185,0.3)] h-12 px-8"
-              onClick={(e) => scrollTo(e, '#portfolio')}
-            >
-              <Terminal className="mr-2 h-4 w-4" />
-              View Portfolio
-            </Button>
-            
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="w-full sm:w-auto bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20 h-12 px-8 text-white"
-              onClick={(e) => scrollTo(e, '#contact')}
-            >
-              Contact Me
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </motion.div>
 
         </div>
       </div>

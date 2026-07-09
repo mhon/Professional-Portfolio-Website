@@ -1,0 +1,2 @@
+- [NixOS browser automation limits](nixos-browser-automation.md) — headless Chromium/Playwright fails in this sandbox; use Screenshot tool + code audit instead.
+- [Hero CTA buttons removed](portfolio-hero-decisions.md) — "View Portfolio" / "Contact Me" buttons intentionally removed as redundant with nav links.

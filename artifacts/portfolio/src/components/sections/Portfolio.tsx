@@ -100,22 +100,22 @@ export function Portfolio() {
                       <a 
                         href={project.githubUrl} 
                         target="_blank" 
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
+                        aria-label={`View ${project.title} source code on GitHub`}
                         className="text-muted-foreground hover:text-white transition-colors p-2 bg-white/5 rounded-full hover:bg-white/10"
-                        title="View Source"
                       >
-                        <Github className="w-5 h-5" />
+                        <Github className="w-5 h-5" aria-hidden="true" />
                       </a>
                     )}
                     {project.liveUrl && (
                       <a 
                         href={project.liveUrl} 
                         target="_blank" 
-                        rel="noreferrer"
+                        rel="noopener noreferrer"
+                        aria-label={`Open live demo of ${project.title}`}
                         className="text-muted-foreground hover:text-white transition-colors p-2 bg-white/5 rounded-full hover:bg-white/10"
-                        title="Live Demo"
                       >
-                        <ExternalLink className="w-5 h-5" />
+                        <ExternalLink className="w-5 h-5" aria-hidden="true" />
                       </a>
                     )}
                   </div>
