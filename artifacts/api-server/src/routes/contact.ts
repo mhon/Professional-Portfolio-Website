@@ -16,28 +16,30 @@ router.post("/contact", async (req, res) => {
     return;
   }
 
-  const smtpPass = process.env["YAHOO_APP_PASSWORD"];
-  if (!smtpPass) {
-    logger.error("YAHOO_APP_PASSWORD secret is not set");
+  const gmailUser = process.env["GMAIL_USER"];
+  const gmailPass = process.env["GMAIL_APP_PASSWORD"];
+  if (!gmailUser || !gmailPass) {
+    logger.error("GMAIL_USER or GMAIL_APP_PASSWORD secret is not set");
     res.status(503).json({ ok: false, error: "Email service not configured." });
     return;
   }
 
   const transporter = nodemailer.createTransport({
-    host: "smtp.mail.yahoo.com",
-    port: 465,
-    secure: true,
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
+    requireTLS: true,
     auth: {
-      user: "mhonbastasa@yahoo.com.ph",
-      pass: smtpPass,
+      user: gmailUser,
+      pass: gmailPass,
     },
   });
 
   try {
     await transporter.sendMail({
-      from: `"Portfolio Contact" <mhonbastasa@yahoo.com.ph>`,
+      from: `"Portfolio | Raymond Bastasa" <${gmailUser}>`,
       to: "mhonbastasa@yahoo.com.ph",
-      replyTo: `"${name}" <${email}>`,
+      replyTo: `${name} <${email}>`,
       subject: `Portfolio inquiry from ${name}`,
       text: `${message}\n\n—\n${name}\n${email}`,
       html: `
