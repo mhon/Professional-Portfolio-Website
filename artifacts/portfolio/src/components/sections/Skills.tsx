@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import {
   SiReact, SiNextdotjs, SiTypescript, SiJavascript, SiHtml5, SiTailwindcss, SiAngular, SiBootstrap, SiJquery,
@@ -109,6 +109,7 @@ function nodePosition(index: number, total: number) {
 export function Skills() {
   const [activeIndex, setActiveIndex] = useState(0);
   const prefersReducedMotion = useReducedMotion();
+  const panelRef = useRef<HTMLDivElement>(null);
   const positions = useMemo(
     () => SKILL_CATEGORIES.map((_, i) => nodePosition(i, SKILL_CATEGORIES.length)),
     []
@@ -116,13 +117,30 @@ export function Skills() {
   const activeCategory = SKILL_CATEGORIES[activeIndex];
   const panelId = 'skills-active-panel';
 
+  useEffect(() => {
+    if (activeIndex === 0 || !panelRef.current) return;
+    if (!window.matchMedia('(max-width: 1023px)').matches) return;
+
+    // On phones and tablets the panel follows the graph. Center it after a
+    // selection so the complete card is visible instead of leaving it below
+    // the viewport.
+    const frame = window.requestAnimationFrame(() => {
+      panelRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [activeIndex]);
+
+  const selectCategory = (index: number) => {
+    setActiveIndex(index);
+  };
+
   return (
     <section id="skills" className="pt-10 pb-24 relative overflow-hidden bg-white/[0.02]">
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="container mx-auto px-6 md:px-12">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
           <div className="flex items-center justify-center gap-4 mb-4">
             <div className="h-[1px] w-8 bg-primary/50" />
             <h2 className="text-sm font-mono text-primary uppercase tracking-widest">Technical Arsenal</h2>
@@ -138,7 +156,7 @@ export function Skills() {
 
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-4">
           {/* Graph */}
-          <div className="relative w-full max-w-[480px] mx-auto lg:mx-0 lg:w-[480px] shrink-0 aspect-square">
+          <div className="relative w-full max-w-[360px] md:max-w-[480px] mx-auto lg:mx-0 lg:w-[480px] shrink-0 aspect-square">
             <svg
               viewBox={`0 0 ${GRAPH_SIZE} ${GRAPH_SIZE}`}
               className="absolute inset-0 w-full h-full"
@@ -210,7 +228,7 @@ export function Skills() {
                 <motion.button
                   key={category.title}
                   type="button"
-                  onClick={() => setActiveIndex(i)}
+                  onClick={() => selectCategory(i)}
                   aria-pressed={isActive}
                   aria-label={`Show ${category.fullTitle} skills`}
                   aria-controls={panelId}
@@ -242,11 +260,12 @@ export function Skills() {
 
           {/* Skill list for active category */}
           <div
+            ref={panelRef}
             id={panelId}
             role="region"
             aria-live="polite"
             aria-label={`${activeCategory.fullTitle} skills`}
-            className="w-full lg:flex-1 glass-panel rounded-3xl p-6 md:p-8 min-h-[280px]"
+            className="w-full lg:flex-1 glass-panel rounded-3xl p-5 md:p-8 min-h-[280px] scroll-mt-24"
           >
             <AnimatePresence mode="wait">
               <motion.div
