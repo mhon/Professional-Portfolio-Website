@@ -26,7 +26,9 @@ Useful verification commands:
 
 ```bash
 pnpm run typecheck
-pnpm run build
+PORT=21113 BASE_PATH=/ pnpm --filter @workspace/portfolio run build
+PORT=8081 BASE_PATH=/__mockup pnpm --filter @workspace/mockup-sandbox run build
+pnpm --filter @workspace/api-server run build
 pnpm --filter @workspace/portfolio run typecheck
 pnpm --filter @workspace/api-server run build
 ```
