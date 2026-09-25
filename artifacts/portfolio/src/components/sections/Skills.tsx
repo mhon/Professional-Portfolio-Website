@@ -208,24 +208,22 @@ export function Skills() {
             </svg>
 
             {/* Core node */}
-            <motion.div
+            <div
               className="absolute flex items-center justify-center h-16 w-16 sm:h-24 sm:w-24 rounded-full glass-panel border-primary/40 text-center"
               style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }}
-              animate={prefersReducedMotion ? undefined : { y: [0, -6, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
             >
               <div>
                 <div className="text-sm sm:text-lg font-display font-bold text-white leading-none">RB</div>
                 <div className="hidden sm:block text-[10px] text-primary font-mono mt-1 uppercase tracking-wide">Core</div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Category nodes */}
             {SKILL_CATEGORIES.map((category, i) => {
               const pos = positions[i];
               const isActive = i === activeIndex;
               return (
-                <motion.button
+                <button
                   key={category.title}
                   type="button"
                   onClick={() => selectCategory(i)}
@@ -234,8 +232,6 @@ export function Skills() {
                   aria-controls={panelId}
                   className="absolute flex flex-col items-center gap-1.5 group focus-visible:outline-none touch-manipulation"
                   style={{ left: `${pos.xPct}%`, top: `${pos.yPct}%`, transform: 'translate(-50%, -50%)' }}
-                  animate={prefersReducedMotion ? undefined : { y: [0, i % 2 === 0 ? -8 : 8, 0] }}
-                  transition={{ duration: 5 + i, repeat: Infinity, ease: 'easeInOut' }}
                 >
                   <span
                     className={`flex items-center justify-center h-11 w-11 sm:h-16 sm:w-16 rounded-full border transition-all duration-300 group-focus-visible:ring-2 group-focus-visible:ring-primary group-focus-visible:ring-offset-2 group-focus-visible:ring-offset-background ${
@@ -253,7 +249,7 @@ export function Skills() {
                   >
                     {category.title}
                   </span>
-                </motion.button>
+                </button>
               );
             })}
           </div>
