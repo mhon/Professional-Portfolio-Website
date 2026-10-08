@@ -1,4 +1,4 @@
-- [NixOS browser automation limits](nixos-browser-automation.md) — headless Chromium/Playwright fails in this sandbox; use Screenshot tool + code audit instead.
+- [NixOS browser automation limits](nixos-browser-automation.md) — screenshots verify layout/fallback, but this sandbox cannot create WebGL2 contexts for live 3D rendering.
 - [Hero CTA buttons removed](portfolio-hero-decisions.md) — "View Portfolio" / "Contact Me" buttons intentionally removed as redundant with nav links.
 - [Contact form email setup](portfolio-email-setup.md) — Yahoo SMTP rejected by cloud IPs (550); switched to Gmail SMTP which works reliably.
 - [GitHub push setup](portfolio-github.md) — origin remote set to https://github.com/mhon/Professional-Portfolio-Website.git; gitPush tool requires Replit GitHub source-control credentials.
