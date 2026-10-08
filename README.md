@@ -2,6 +2,22 @@
 
 Personal portfolio for Raymond Bastasa, a full-stack software engineer focused on modern web applications, AI integration, automation, and developer tooling.
 
+## Website screenshots
+
+Screenshots of the portfolio’s main sections:
+
+### Home
+
+![Portfolio home page](docs/screenshots/home.png)
+
+| About Me | Skills |
+| --- | --- |
+| ![About Me section](docs/screenshots/about.jpg) | ![Skills section](docs/screenshots/skills.jpg) |
+
+| Portfolio | Contact |
+| --- | --- |
+| ![Portfolio section](docs/screenshots/portfolio.jpg) | ![Contact section](docs/screenshots/contact.jpg) |
+
 ## Project structure
 
 This repository is a pnpm workspace with three artifacts:
