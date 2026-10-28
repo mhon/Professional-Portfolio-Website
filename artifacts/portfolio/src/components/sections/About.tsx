@@ -38,13 +38,13 @@ export function About() {
               <h2 className="text-sm font-mono text-primary uppercase tracking-widest">About Me</h2>
             </div>
             
-            <h3 className="text-3xl md:text-4xl font-display font-semibold text-white mb-6 leading-tight">
+            <h3 className="text-3xl md:text-4xl font-display font-semibold text-foreground mb-6 leading-tight">
               Engineering solutions built for long-term growth and intelligent automation.
             </h3>
             
             <div className="space-y-6 text-muted-foreground text-lg font-light leading-relaxed">
               <p>
-                I am a Full Stack Software Engineer specializing in <span className="text-white font-medium">AI Integration</span> and modern web technologies. My passion lies in building scalable, intelligent, and user-focused digital products that seamlessly combine clean architecture with automation.
+                I am a Full Stack Software Engineer specializing in <span className="text-foreground font-medium">AI Integration</span> and modern web technologies. My passion lies in building scalable, intelligent, and user-focused digital products that seamlessly combine clean architecture with automation.
               </p>
               <p>
                 With extensive experience developing enterprise applications using PHP, C#, ASP.NET, JavaScript, TypeScript, React, Next.js, Python, and SQL, I create software solutions that are secure, maintainable, and designed to scale.
@@ -70,10 +70,10 @@ export function About() {
                   idx === 2 ? 'sm:col-span-2' : ''
                 }`}
               >
-                <div className="h-12 w-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-6">
+                <div className="h-12 w-12 rounded-xl bg-muted/70 border border-border flex items-center justify-center mb-6">
                   {card.icon}
                 </div>
-                <h4 className="text-xl font-medium text-white mb-2">{card.title}</h4>
+                <h4 className="text-xl font-medium text-foreground mb-2">{card.title}</h4>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {card.desc}
                 </p>

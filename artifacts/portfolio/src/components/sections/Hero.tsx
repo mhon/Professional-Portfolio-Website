@@ -15,11 +15,11 @@ function UniverseLoading() {
       <span className="absolute left-1/2 top-1/2 h-[68%] w-[68%] -translate-x-1/2 -translate-y-1/2 rotate-[-24deg] scale-y-[0.55] rounded-full border border-primary/20" />
       <span className="absolute left-1/2 top-1/2 h-[88%] w-[88%] -translate-x-1/2 -translate-y-1/2 rotate-[32deg] scale-y-[0.48] rounded-full border border-secondary/20" />
       <span className="absolute left-1/2 top-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/20 shadow-[0_0_60px_rgba(33,212,185,0.35)] md:h-28 md:w-28" />
-      <span className="absolute left-[34%] top-[14%] rounded-md border border-white/10 bg-card/80 px-2 py-1 font-mono text-[9px] text-muted-foreground">Frontend · Angular</span>
-      <span className="absolute left-[2%] top-[32%] rounded-md border border-white/10 bg-card/80 px-2 py-1 font-mono text-[9px] text-muted-foreground">Tools &amp; DevOps</span>
-      <span className="absolute right-[2%] top-[44%] rounded-md border border-white/10 bg-card/80 px-2 py-1 font-mono text-[9px] text-muted-foreground">AI &amp; Automation</span>
-      <span className="absolute bottom-[25%] left-[2%] rounded-md border border-white/10 bg-card/80 px-2 py-1 font-mono text-[9px] text-muted-foreground">Database · PostgreSQL</span>
-      <span className="absolute bottom-[8%] left-[33%] rounded-md border border-white/10 bg-card/80 px-2 py-1 font-mono text-[9px] text-muted-foreground">Backend · PHP · C#</span>
+      <span className="absolute left-[34%] top-[14%] rounded-md border border-border/80 bg-card/85 px-2 py-1 font-mono text-[9px] text-muted-foreground">Frontend · Angular</span>
+      <span className="absolute left-[2%] top-[32%] rounded-md border border-border/80 bg-card/85 px-2 py-1 font-mono text-[9px] text-muted-foreground">Tools &amp; DevOps</span>
+      <span className="absolute right-[2%] top-[44%] rounded-md border border-border/80 bg-card/85 px-2 py-1 font-mono text-[9px] text-muted-foreground">AI &amp; Automation</span>
+      <span className="absolute bottom-[25%] left-[2%] rounded-md border border-border/80 bg-card/85 px-2 py-1 font-mono text-[9px] text-muted-foreground">Database · PostgreSQL</span>
+      <span className="absolute bottom-[8%] left-[33%] rounded-md border border-border/80 bg-card/85 px-2 py-1 font-mono text-[9px] text-muted-foreground">Backend · PHP · C#</span>
     </div>
   );
 }
@@ -37,7 +37,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="mb-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-sm"
+              className="mb-7 inline-flex items-center gap-2 rounded-full border border-border bg-card/70 px-4 py-2 backdrop-blur-sm"
             >
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
@@ -52,11 +52,11 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mb-6 text-5xl font-display font-bold leading-tight tracking-tight text-white md:text-6xl xl:text-7xl"
+              className="mb-6 text-5xl font-display font-bold leading-tight tracking-tight text-foreground md:text-6xl xl:text-7xl"
             >
-              Hi, I&apos;m <span className="text-white">Raymond Bastasa</span>
+              Hi, I&apos;m <span className="text-foreground">Raymond Bastasa</span>
               <br />
-              <span className="bg-gradient-to-r from-white via-muted-foreground to-white/20 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-foreground via-muted-foreground to-foreground/25 bg-clip-text text-transparent">
                 AI-Driven Full Stack Development
               </span>
             </motion.h1>

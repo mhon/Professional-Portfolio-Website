@@ -135,9 +135,9 @@ export function Skills() {
   };
 
   return (
-    <section id="skills" className="pt-10 pb-24 relative overflow-hidden bg-white/[0.02]">
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+    <section id="skills" className="pt-10 pb-24 relative overflow-hidden bg-muted/25">
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
@@ -146,7 +146,7 @@ export function Skills() {
             <h2 className="text-sm font-mono text-primary uppercase tracking-widest">Technical Arsenal</h2>
             <div className="h-[1px] w-8 bg-primary/50" />
           </div>
-          <h3 className="text-3xl md:text-4xl font-display font-semibold text-white">
+          <h3 className="text-3xl md:text-4xl font-display font-semibold text-foreground">
             A Growing Knowledge Network
           </h3>
           <p className="text-muted-foreground mt-4 font-light">
@@ -177,7 +177,8 @@ export function Skills() {
                   y1={CENTER}
                   x2={pos.x}
                   y2={pos.y}
-                  stroke={i === activeIndex ? 'hsl(var(--primary))' : 'hsla(210, 20%, 80%, 0.15)'}
+                  stroke={i === activeIndex ? 'hsl(var(--primary))' : 'hsl(var(--muted-foreground))'}
+                  strokeOpacity={i === activeIndex ? 0.8 : 0.18}
                   strokeWidth={i === activeIndex ? 1.5 : 1}
                   initial={{ pathLength: 0, opacity: 0 }}
                   whileInView={{ pathLength: 1, opacity: 1 }}
@@ -213,7 +214,7 @@ export function Skills() {
               style={{ left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }}
             >
               <div>
-                <div className="text-sm sm:text-lg font-display font-bold text-white leading-none">RB</div>
+                <div className="text-sm sm:text-lg font-display font-bold text-foreground leading-none">RB</div>
                 <div className="hidden sm:block text-[10px] text-primary font-mono mt-1 uppercase tracking-wide">Core</div>
               </div>
             </div>
@@ -237,14 +238,14 @@ export function Skills() {
                     className={`flex items-center justify-center h-11 w-11 sm:h-16 sm:w-16 rounded-full border transition-all duration-300 group-focus-visible:ring-2 group-focus-visible:ring-primary group-focus-visible:ring-offset-2 group-focus-visible:ring-offset-background ${
                       isActive
                         ? 'bg-primary/20 border-primary text-primary shadow-[0_0_25px_rgba(33,212,185,0.35)]'
-                        : 'bg-white/5 border-white/10 text-muted-foreground group-hover:border-white/30 group-hover:text-white'
+                        : 'bg-card/70 border-border text-muted-foreground group-hover:border-primary/40 group-hover:text-foreground'
                     }`}
                   >
                     <category.icon className="w-4 h-4 sm:w-6 sm:h-6" />
                   </span>
                   <span
                     className={`text-[10px] sm:text-xs font-medium whitespace-nowrap px-1.5 sm:px-2 py-0.5 rounded-full transition-colors ${
-                      isActive ? 'text-primary' : 'text-muted-foreground group-hover:text-white'
+                      isActive ? 'text-primary' : 'text-muted-foreground group-hover:text-foreground'
                     }`}
                   >
                     {category.title}
@@ -271,7 +272,7 @@ export function Skills() {
                 exit={prefersReducedMotion ? undefined : { opacity: 0, x: -16 }}
                 transition={{ duration: 0.35 }}
               >
-                <h4 className="text-lg font-medium text-white mb-6 flex items-center gap-2">
+                <h4 className="text-lg font-medium text-foreground mb-6 flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
                   {activeCategory.fullTitle}
                 </h4>
@@ -283,10 +284,10 @@ export function Skills() {
                       initial={prefersReducedMotion ? undefined : { opacity: 0, scale: 0.85 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.3, delay: prefersReducedMotion ? 0 : idx * 0.05 }}
-                      className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 border border-white/5 hover:border-white/20 transition-colors group cursor-default"
+                      className="flex items-center gap-2 px-3 py-2 rounded-lg bg-muted/55 border border-border/70 hover:border-primary/40 transition-colors group cursor-default"
                     >
-                      <skill.icon className="w-4 h-4 text-muted-foreground group-hover:text-white transition-colors" />
-                      <span className="text-sm text-muted-foreground group-hover:text-white font-medium transition-colors">
+                      <skill.icon className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
+                      <span className="text-sm text-muted-foreground group-hover:text-foreground font-medium transition-colors">
                         {skill.name}
                       </span>
                     </motion.div>

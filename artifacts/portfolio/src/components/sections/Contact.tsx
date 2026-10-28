@@ -79,7 +79,7 @@ export function Contact() {
               <h2 className="text-sm font-mono text-primary uppercase tracking-widest">Get In Touch</h2>
             </div>
             
-            <h3 className="text-4xl md:text-5xl font-display font-semibold text-white mb-6 leading-tight">
+            <h3 className="text-4xl md:text-5xl font-display font-semibold text-foreground mb-6 leading-tight">
               Let's Build Something <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Amazing Together</span>
             </h3>
             
@@ -88,32 +88,32 @@ export function Contact() {
             </p>
             
             <div className="space-y-6">
-              <a href="mailto:mhonbastasa@yahoo.com.ph" target="_blank" rel="noreferrer" className="flex items-center gap-4 text-muted-foreground hover:text-white transition-colors group">
-                <div className="h-12 w-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/30 group-hover:text-primary transition-all">
+              <a href="mailto:mhonbastasa@yahoo.com.ph" target="_blank" rel="noreferrer" className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group">
+                <div className="h-12 w-12 rounded-full bg-muted/60 border border-border flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/30 group-hover:text-primary transition-all">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-sm font-mono text-white/50 mb-1">Email</span>
+                  <span className="text-sm font-mono text-muted-foreground mb-1">Email</span>
                   <span className="font-medium text-lg">mhonbastasa@yahoo.com.ph</span>
                 </div>
               </a>
               
-              <a href="https://www.linkedin.com/in/raymond-bastasa-59804a116/" target="_blank" rel="noreferrer" className="flex items-center gap-4 text-muted-foreground hover:text-white transition-colors group">
-                <div className="h-12 w-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/30 group-hover:text-primary transition-all">
+              <a href="https://www.linkedin.com/in/raymond-bastasa-59804a116/" target="_blank" rel="noreferrer" className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group">
+                <div className="h-12 w-12 rounded-full bg-muted/60 border border-border flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/30 group-hover:text-primary transition-all">
                   <Linkedin className="w-5 h-5" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-sm font-mono text-white/50 mb-1">LinkedIn</span>
+                  <span className="text-sm font-mono text-muted-foreground mb-1">LinkedIn</span>
                   <span className="font-medium text-lg">Raymond Bastasa</span>
                 </div>
               </a>
               
-              <a href="https://github.com/mhon" target="_blank" rel="noreferrer" className="flex items-center gap-4 text-muted-foreground hover:text-white transition-colors group">
-                <div className="h-12 w-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/30 group-hover:text-primary transition-all">
+              <a href="https://github.com/mhon" target="_blank" rel="noreferrer" className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group">
+                <div className="h-12 w-12 rounded-full bg-muted/60 border border-border flex items-center justify-center group-hover:bg-primary/10 group-hover:border-primary/30 group-hover:text-primary transition-all">
                   <Github className="w-5 h-5" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-sm font-mono text-white/50 mb-1">GitHub</span>
+                  <span className="text-sm font-mono text-muted-foreground mb-1">GitHub</span>
                   <span className="font-medium text-lg">@mhon</span>
                 </div>
               </a>
@@ -131,19 +131,19 @@ export function Contact() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium text-white/80">Name</label>
+                  <label htmlFor="name" className="text-sm font-medium text-foreground/80">Name</label>
                   <Input 
                     id="name" 
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="John Doe" 
-                    className="bg-white/5 border-white/10 focus-visible:ring-primary h-12 text-base"
+                    className="bg-muted/55 border-border focus-visible:ring-primary h-12 text-base"
                   />
                 </div>
                 
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-white/80">Email</label>
+                  <label htmlFor="email" className="text-sm font-medium text-foreground/80">Email</label>
                   <Input 
                     id="email" 
                     name="email"
@@ -151,19 +151,19 @@ export function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="john@example.com" 
-                    className="bg-white/5 border-white/10 focus-visible:ring-primary h-12 text-base"
+                    className="bg-muted/55 border-border focus-visible:ring-primary h-12 text-base"
                   />
                 </div>
                 
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium text-white/80">Message</label>
+                  <label htmlFor="message" className="text-sm font-medium text-foreground/80">Message</label>
                   <Textarea 
                     id="message" 
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Tell me about your project..." 
-                    className="bg-white/5 border-white/10 focus-visible:ring-primary min-h-[150px] resize-none text-base p-4"
+                    className="bg-muted/55 border-border focus-visible:ring-primary min-h-[150px] resize-none text-base p-4"
                   />
                 </div>
                 

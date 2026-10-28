@@ -8,6 +8,10 @@
   isolation: isolate;
 }
 
+:root[data-theme='light'] .universe-frame {
+  --universe-ink: rgba(31, 51, 59, 0.8);
+}
+
 .universe-frame::before {
   position: absolute;
   inset: 10% 7%;
@@ -16,6 +20,10 @@
   background: radial-gradient(ellipse, rgba(24, 123, 119, 0.12), rgba(5, 12, 18, 0) 68%);
   content: "";
   pointer-events: none;
+}
+
+:root[data-theme='light'] .universe-frame::before {
+  background: radial-gradient(ellipse, rgba(24, 123, 119, 0.1), rgba(248, 250, 252, 0) 68%);
 }
 
 .universe-canvas-host {
@@ -73,6 +81,10 @@
   font-family: var(--app-font-mono);
   font-size: 8px;
   letter-spacing: 0.11em;
+}
+
+:root[data-theme='light'] .universe-caption {
+  color: rgba(31, 51, 59, 0.55);
 }
 
 .universe-caption i {
@@ -192,6 +204,17 @@
   color: #dce9e9;
   font: 10px var(--app-font-mono);
   white-space: nowrap;
+}
+
+:root[data-theme='light'] .universe-status {
+  border-color: rgba(21, 128, 116, 0.22);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+:root[data-theme='light'] .fallback-label {
+  border-color: rgba(21, 128, 116, 0.28);
+  background: rgba(255, 255, 255, 0.9);
+  color: #20343b;
 }
 
 .fallback-label-top { top: 12%; left: 35%; }

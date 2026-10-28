@@ -44,7 +44,7 @@ export function Portfolio() {
               <div className="h-[1px] w-8 bg-primary/50" />
               <h2 className="text-sm font-mono text-primary uppercase tracking-widest">Selected Works</h2>
             </div>
-            <h3 className="text-3xl md:text-4xl font-display font-semibold text-white max-w-lg">
+            <h3 className="text-3xl md:text-4xl font-display font-semibold text-foreground max-w-lg">
               Featured Projects
             </h3>
           </div>
@@ -66,7 +66,7 @@ export function Portfolio() {
               }`}
             >
               {/* Project preview image */}
-              <div className="relative h-56 md:h-64 border-b border-white/5 overflow-hidden bg-white/5">
+              <div className="relative h-56 md:h-64 border-b border-border overflow-hidden bg-muted/50">
                 {project.image ? (
                   <img
                     src={project.image}
@@ -75,9 +75,9 @@ export function Portfolio() {
                     loading="lazy"
                   />
                 ) : (
-                  <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-white/5 to-transparent">
-                    <ListTodo className="w-10 h-10 text-white/20" />
-                    <span className="text-xs font-mono text-white/30 uppercase tracking-widest">
+                  <div className="w-full h-full flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-muted/60 to-transparent">
+                    <ListTodo className="w-10 h-10 text-muted-foreground/50" />
+                    <span className="text-xs font-mono text-muted-foreground uppercase tracking-widest">
                       Preview coming soon
                     </span>
                   </div>
@@ -102,7 +102,7 @@ export function Portfolio() {
                         target="_blank" 
                         rel="noopener noreferrer"
                         aria-label={`View ${project.title} source code on GitHub`}
-                        className="text-muted-foreground hover:text-white transition-colors p-2 bg-white/5 rounded-full hover:bg-white/10"
+                        className="text-muted-foreground hover:text-foreground transition-colors p-2 bg-muted/60 rounded-full hover:bg-accent"
                       >
                         <Github className="w-5 h-5" aria-hidden="true" />
                       </a>
@@ -113,7 +113,7 @@ export function Portfolio() {
                         target="_blank" 
                         rel="noopener noreferrer"
                         aria-label={`Open live demo of ${project.title}`}
-                        className="text-muted-foreground hover:text-white transition-colors p-2 bg-white/5 rounded-full hover:bg-white/10"
+                        className="text-muted-foreground hover:text-foreground transition-colors p-2 bg-muted/60 rounded-full hover:bg-accent"
                       >
                         <ExternalLink className="w-5 h-5" aria-hidden="true" />
                       </a>
@@ -121,7 +121,7 @@ export function Portfolio() {
                   </div>
                 </div>
 
-                <h4 className="text-2xl md:text-3xl font-display font-semibold text-white mb-4 group-hover:text-primary transition-colors">
+                <h4 className="text-2xl md:text-3xl font-display font-semibold text-foreground mb-4 group-hover:text-primary transition-colors">
                   {project.title}
                 </h4>
                 
@@ -133,7 +133,7 @@ export function Portfolio() {
                   {project.tech.map(tech => (
                     <span 
                       key={tech} 
-                      className="px-3 py-1 text-xs font-mono text-white/70 bg-white/5 border border-white/10 rounded-md"
+                      className="px-3 py-1 text-xs font-mono text-muted-foreground bg-muted/50 border border-border rounded-md"
                     >
                       {tech}
                     </span>

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ThemeModePicker } from '@/components/theme/ThemeModePicker';
 
 const NAV_LINKS = [
   { name: 'Home', href: '#home' },
@@ -75,7 +76,7 @@ export function Navbar() {
       className={cn(
         'fixed top-0 z-50 w-full transition-all duration-300',
         isScrolled
-          ? 'bg-background/80 backdrop-blur-md border-b border-white/5 py-3 shadow-lg shadow-black/20'
+          ? 'bg-background/80 backdrop-blur-md border-b border-border py-3 shadow-lg shadow-foreground/10'
           : 'bg-transparent py-5'
       )}
     >
@@ -83,7 +84,7 @@ export function Navbar() {
         <a 
           href="#home" 
           onClick={(e) => scrollTo(e, '#home')}
-          className="text-xl font-display font-bold tracking-tight text-white flex items-center gap-2 group"
+         className="text-xl font-display font-bold tracking-tight text-foreground flex items-center gap-2 group"
         >
           <span className="h-8 w-8 rounded-lg bg-primary/20 border border-primary/50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
             R
@@ -92,7 +93,7 @@ export function Navbar() {
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-1 bg-white/5 rounded-full px-2 py-1 border border-white/10 backdrop-blur-md">
+        <nav className="hidden md:flex items-center gap-1 bg-card/75 rounded-full px-2 py-1 border border-border/80 backdrop-blur-md">
           {NAV_LINKS.map((link) => (
             <a
               key={link.name}
@@ -101,8 +102,8 @@ export function Navbar() {
               className={cn(
                 'px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 relative',
                 activeSection === link.href.substring(1)
-                  ? 'text-white'
-                  : 'text-muted-foreground hover:text-white hover:bg-white/5'
+                  ? 'text-foreground'
+                  : 'text-muted-foreground hover:text-foreground hover:bg-accent'
               )}
             >
               {activeSection === link.href.substring(1) && (
@@ -118,27 +119,30 @@ export function Navbar() {
         </nav>
 
         {/* Let's Talk Button */}
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-3">
+          <ThemeModePicker />
           <a
             href="#contact"
             onClick={(e) => scrollTo(e, '#contact')}
-            className="px-5 py-2.5 rounded-lg text-sm font-semibold bg-white/5 border border-white/10 hover:border-primary/50 hover:bg-primary/10 transition-all duration-300"
+            className="px-5 py-2.5 rounded-lg text-sm font-semibold bg-card/75 border border-border hover:border-primary/50 hover:bg-primary/10 transition-all duration-300"
           >
             Let's Talk
           </a>
         </div>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          ref={toggleButtonRef}
-          className="md:hidden text-muted-foreground hover:text-white p-2"
-          onClick={() => setMobileMenuOpen(prev => !prev)}
-          aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-          aria-expanded={mobileMenuOpen}
-          aria-controls={MENU_ID}
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeModePicker />
+          <button
+            ref={toggleButtonRef}
+            className="text-muted-foreground hover:text-foreground p-2"
+            onClick={() => setMobileMenuOpen(prev => !prev)}
+            aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={mobileMenuOpen}
+            aria-controls={MENU_ID}
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav */}
@@ -152,7 +156,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18, ease: 'easeOut' }}
-            className="md:hidden bg-card/95 backdrop-blur-xl border-b border-white/5 relative z-50"
+            className="md:hidden bg-card/95 backdrop-blur-xl border-b border-border relative z-50"
           >
             <nav className="flex flex-col p-4 space-y-2">
               {NAV_LINKS.map((link) => (
@@ -164,7 +168,7 @@ export function Navbar() {
                     'px-4 py-3 rounded-lg text-base font-medium transition-colors touch-manipulation',
                     activeSection === link.href.substring(1)
                       ? 'bg-primary/20 text-primary border border-primary/20'
-                      : 'text-muted-foreground hover:bg-white/5 active:bg-white/10'
+                      : 'text-muted-foreground hover:bg-accent active:bg-accent'
                   )}
                 >
                   {link.name}

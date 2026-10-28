@@ -3,6 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8fafc" />
+    <script>
+      (() => {
+        const storageKey = 'portfolio-theme-mode';
+        let mode = 'auto';
+        try {
+          const savedMode = localStorage.getItem(storageKey);
+          if (savedMode === 'light' || savedMode === 'dark' || savedMode === 'auto') mode = savedMode;
+        } catch {}
+
+        const hour = new Date().getHours();
+        const resolvedTheme = mode === 'auto'
+          ? (hour >= 18 || hour < 5 ? 'dark' : 'light')
+          : mode;
+        const root = document.documentElement;
+        root.dataset.theme = resolvedTheme;
+        root.dataset.themeMode = mode;
+        root.classList.toggle('dark', resolvedTheme === 'dark');
+      })();
+    </script>
     <title>Raymond Bastasa | Full Stack Software Engineer</title>
     <meta name="description" content="Portfolio of Raymond Bastasa, Full Stack Software Engineer specializing in AI Integration and modern web technologies." />
     <meta name="robots" content="index, follow" />
